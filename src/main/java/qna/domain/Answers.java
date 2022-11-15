@@ -46,6 +46,11 @@ public class Answers {
         answers.forEach(answer -> answer.isOwner(loginUser));
     }
 
+    public void delete(DeleteHistories deleteHistories, User loginUser) {
+        isOwner(loginUser);
+        deleteHistories.addAnswersDeleteHistory(this, loginUser);
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
